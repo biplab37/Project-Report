@@ -1,0 +1,18 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {2}The Nuclear Many-body Problem}{1}{section.2}
+\contentsline {section}{\numberline {3}Hartree Fock Method}{2}{section.3}
+\contentsline {section}{\numberline {4}Skyrme-Hartree-Fock}{2}{section.4}
+\contentsline {section}{\numberline {5}Time dependent Hartree-Fock Theory}{3}{section.5}
+\contentsline {section}{\numberline {6}Linear Response Theory}{3}{section.6}
+\contentsline {section}{\numberline {7}Random Phase Approximation}{3}{section.7}
+\contentsline {subsection}{\numberline {7.1}Language of Second Quantisation}{3}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Tamm-Dancoff Approximation}{3}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Random Phase Approximation}{4}{subsection.7.3}
+\contentsline {section}{\numberline {8}Results and Discussion}{5}{section.8}
+\contentsline {subsection}{\numberline {8.1}Results from TDHF}{5}{subsection.8.1}
+\contentsline {subsubsection}{\numberline {8.1.1}Ground state properties}{5}{subsubsection.8.1.1}
+\contentsline {subsubsection}{\numberline {8.1.2}Octupole vibration}{5}{subsubsection.8.1.2}
+\contentsline {subsection}{\numberline {8.2}Results from RPA}{7}{subsection.8.2}
+\contentsline {section}{\numberline {A}code TDHF}{9}{Appendix.1.A}
+\contentsline {section}{\numberline {B}code RPA}{9}{Appendix.1.B}

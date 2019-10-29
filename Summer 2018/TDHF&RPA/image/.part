@@ -1,0 +1,16 @@
+ly a single energy level of the dot align with the $E_{F}$ giving conductance. As derived in \ref{ref2} Conductance in this case is given by
+      \begin{equation}
+      G = \dfrac{G_{max} }{\cosh^2 \left(\frac{\Delta_{min}}{2k_{b}T} \right)}
+      \end{equation}
+      \begin{equation}
+      G_{max} = \dfrac{e^2}{4k_{b} T} \dfrac{\Gamma^l \Gamma^r}{\Gamma^l + \Gamma^r}
+      \end{equation} 
+      In these equations $\Delta_{min}$ is the minimum value of the function $\Delta(N) = F(N) -F(N-1) -E_{N} -\mu -E_{F} $ where $\mu$ is the chemical potential of the dot. And $\Gamma 's$ are tunneling co-efficient of the junctions of the dot with the left and right reservoirs. 
+
+      \item $\Delta E \ll k_{b} T \ll e^2/C$ In this case as the energy level separations of the dot are small a continuum of levels align to give contribution in conductance. As derived in ref ?? Conductance in this case is given by
+
+      \begin{equation}
+      G = \dfrac{G_{max}}{\cosh^2 \left(\frac{\Delta_{min}}{2.5k_{b}T}\right)} 
+      \end{equation}
+      where $\Delta_{min}$ and $G_{max}$ are same as earlier. 
+

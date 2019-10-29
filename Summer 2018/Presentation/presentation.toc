@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Octupole vibration}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{TDHF}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{RPA}{20}{0}{1}
+\beamer@sectionintoc {2}{Toy Model}{36}{0}{2}

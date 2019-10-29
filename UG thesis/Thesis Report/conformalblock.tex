@@ -1,0 +1,110 @@
+% \documentclass[a4paper]{report}
+%     \usepackage[utf8]{inputenc}
+%     \usepackage[english]{babel}
+%     \usepackage{amsmath}
+%     \usepackage{amssymb}
+%     \usepackage{amsthm}
+%     \usepackage{graphicx}
+%     \usepackage{hyperref}
+%     \usepackage[top=1in, bottom=1.25in, left=1in, right=1in]{geometry}
+%     \usepackage{wrapfig}
+%     \theoremstyle{definition}
+%     \newtheorem{definition}{Definition}[section]
+%     % \theoremstyle{remark}
+%     % \newtheorem*{remark}{Remark}
+%     % \newtheorem*{theorem}{Theorem}
+%     \usepackage[autostyle]{csquotes}
+%     \usepackage{float}
+%     \usepackage[font={small,it}]{caption}
+%     \usepackage[title]{appendix}
+%     \usepackage{subfig}
+%     \usepackage[export]{adjustbox}
+%     \usepackage{tikz}
+%     \title{A note on the paper Skeleton expansion and large spin bootstrap for $\phi^3$ theory\ref{vasco}}
+%     \author{Biplab Mahato}
+%     \begin{document}
+        \section{Conformal Blocks}
+            Consider the four point function. We can use the OPE expansion for two pairs of fields toget
+            \begin{equation}\label{12decomposition}
+                \langle\phi(x_1)\phi(x_2)\phi(x_3)\phi(x_4)\rangle = \sum_{\mathcal{O}}\lambda_{12\mathcal{O}}\lambda_{34\mathcal{O}}\left(\mathcal{C}_{\mathcal{O}}(x_{12},\partial_y)\mathcal{C}_{\mathcal{O}}(x_{34},\partial_z)\langle\mathcal{O}(y)\mathcal{O}(z) \rangle \right)
+            \end{equation}
+            where the expreesion in the bracket is completely determined by the conformal invariance. These are called conformal partial waves or the conformal blocks. The coefficients on the other hand is known as OPE coefficients. One can easily factor out the position dependence from the four point function and be left with a function solely dependent on the two conformally invariant cross-ratios. 
+            \begin{equation}
+                \langle\phi(x_1)\phi(x_2)\phi(x_3)\phi(x_4)\rangle = \frac{\mathcal{A}(u,v)}{(x_{12}^2x_{34}^2)^{\Delta_{\phi}}}
+            \end{equation} 
+            the function $\mathcal{A}(u,v)$ can now be written in terms of conformal blocks
+            \begin{equation}
+                \mathcal{A}(u,v) = 1 + \sum_{\mathcal{O}}\lambda_{12\mathcal{O}}\lambda_{34\mathcal{O}}G_{\mathcal{O}}(u,v)
+            \end{equation}
+            where the function $G_{\mathcal{O}}(u,v)$ is known for all dimensions(closed forms are only known for even dimensions)(note that 1 is coming from the identity operator). \\
+            An operator is characterised by its dimension and its spin. So the sum over primaries can be replaced by the sum over dimensions and spins. Spins can take only half integer values (in this case only integer values are allowed as free scalar field describe bosons). Conformal block for generic values of scaling dimension and spin are given by
+            \begin{equation}\label{uvexpansionofblock}
+                G_{\Delta,l}^{d}(u,v) = \sum_{m=0}^{\infty} u^{\frac{\Delta-l}{2}+m} g_{m,l}(v)
+            \end{equation}
+            where $g_{m,l}(u,v)$ satisfy the differential equation\cite{regge}
+            \footnotesize
+            \begin{multline}
+                4v(v-1)^2g_{m,l}''(v) - 2(v-1)g_{m,l}'(v)\left(2v(-\Delta+l-2m-1)\right) \\+ g_{m,l}(v)(4m(-d+mv+m)+l^2(v-1)-2l(\Delta+2m(v+1)+\Delta v -2) + 4\Delta m(v+1)+\Delta^2(v-1) ) \\= 4v(v+1)g_{m-1,l}''(v)+ 2g_{m-1,l}'(v)\left(2v(\Delta-l+2m-1)+2 \right) + g_{m-1,l}\left(-\Delta+l-2m+2 \right)\left(-\Delta+l-2m+2 \right)
+            \end{multline}
+            \normalsize
+            for the purpose of this text we only need the first two of these
+            \begin{eqnarray}\label{g0g1}
+                g_{0,l}(u,v) &=& \left(\frac{v-1}{2}\right)^{l} {}_2F_1\left(\frac{\Delta+l}{2},\frac{\Delta+l}{2};\Delta+l;1-v\right)\\
+                g_{1,l}(u,v) &=& \frac{\Delta(l+\Delta)^2(\Delta-1)}{(\Delta+l-1)(\Delta+l+1)(\Delta+1-\frac{d}{2})} {}_2F_1\left(\frac{\Delta+2}{2},\frac{\Delta+2}{2};\Delta+2;1-v\right)\nonumber
+            \end{eqnarray}
+            The expansion of this form is effective while considering low twist ($\tau = \Delta-l$) contributions to the four-point function. The next section provides the details of determining those contributions.
+        \section{Conformal Block Decomposition}
+            To get an idea how the OPE co-efficients are fixed we will go through the process of conformal block decomposition for the tree level. Higher order calculations will be sketched.
+            \subsection{Tree-level}
+                First consider the tree-level four-point function.
+                \begin{equation}
+                    \mathcal{A}(u,v) = 1 + u^{2} + \left    (\frac{u}{v}\right)^{2} + O(\epsilon)
+                \end{equation}
+                We will try to match the this with the  conformal waves in the OPE limit ($z\to 0,   \bar{z}\to0 $ or $u\to 0,v\to 1$). So we   will write everything in terms of $u$ and a   new variable $x = (1-v)$. The four-point  function becomes.
+                \begin{eqnarray}
+                    \mathcal{A}(u,x) = 1 + u^2 + u^2\sum_   {n=0}^{\infty} n x^n
+                \end{eqnarray}
+                First term can be matched with the identity.    Rest of the terms has a commom factor of   $u^2$. It is clear that we must have  $\Delta-l = 4$ with $m=0$ so that we have $G_    {4+l,l}^{6}(u,v) = u^2 g_{0,l}(v)$. So now  it boils down to the equation 
+                \begin{equation}
+                    \sum_{n=0}^{\infty} n x^n = \sum_{l=0 \\    even}^{\infty} p_{0,l} g_{0,l}(1-x) 
+                \end{equation}
+                This equation at first glance seems daunting    to solve for $p_{0,l}$. But notice the     factor $x^l$ in front of Hypergeometric     function. Hypergeometric function near $x=0$    behaves like a power series with no    divergence. So overall $g_{0,l}$ starts    contributing after $x^l$. This reduces the     infinite sum to finite for each co-efficient    of some power of x. Comparing co-efficients    on both side now it become easy to solve for   $p_{0,l}$. The values have a closed form  formula which can be found in    Mathematica\footnote{Using the command     \textit{FindSequenceFunction} in Mathematica}   .
+                \begin{equation}
+                    p_{0,l} = \frac{2^l (l+2)!(l+1)! }{(2l+1)!}   
+                \end{equation} 
+            \subsection{First order calculations}
+                In first order in $\epsilon$, $\bar{D}$ functions in \ref{firstorderine} will start contributing. Note that there is not any $u^0$ term. Contribution starts from $u^1$. This is expected as unitary bound\footnote{We are treating $\phi^3$ theory as a perturbation to the free theory, so we can use the unitary bounds for the free theory even though $\phi^3$ theory is not unitary for real coupling constant} (\ref{unitary}) constraints $\Delta\geq\frac{6-2}{2}=2$ for scalar operator and twist $\tau = \Delta-l\geq6-2=4$. And on the right hand side conformal blocks have $u^{\frac{\tau}{2}}$ character. So $u^0$ term is not allowed in the theory. Also it is clear that $u^1$ terms will be matched by only the scalar operator saturating the unitary bound. Note that this scalar operator is the operator $\phi$.\\
+                Among the three permutaions of order $\epsilon$ terms only one $(f_1)$ have $u^1$ term (as $\bar{D}_{2,2,1,1}(u,v)$ has a factor of $1/u$). So we must have \footnote{note that $C_{\phi\phi\phi}^2\approx\epsilon+O(\epsilon^2)$ so at order $\epsilon$ we should take only the leading terms in d and $\Delta$}
+                \begin{equation}
+                    \frac{C_{\phi\phi\phi}^{2}\Gamma(\Delta)}{\Gamma^{4}(\frac{\Delta}{2})\Gamma(\frac{d-2\Delta}{2})}f_1(u,v) = C_{\phi\phi\phi}^2u{}_2F_1\left(1,1,2,1-v \right)
+                \end{equation}
+                Two sides matches exactly without giving any constraints!\\
+                At order $u^2$ two kind of terms arises; one with log(u) factor and one without it. $log(u)$ factor arises from the anomalous dimensions in conformal partial waves ($u^{\frac{\tau}{2}} = u^{2+\frac{1}{2}\epsilon \gamma_l^{(1)}} = u^2(1+\frac{1}{2}\epsilon\gamma_l^{(1)}log(u))$). By matching co-eeficient on both side we get the expression 
+                \begin{equation}
+                    \gamma_l^{(1)} = \frac{4}{3(l+1)(l+2)}
+                \end{equation} 
+                Using this expression if we try to match without log terms at the same order we will get the first order corrections to the ope co-efficients.
+                \begin{align}
+                    p_{0,l} &= \frac{2^l (l+2)!(l+1)! }{(2l+1)!}(1+\epsilon\mathcal{P}_l + \epsilon^2Q_l)\nonumber\\
+                    \text{where } \mathcal{P}_l &= -\frac{4(7+5l(3+l))S_l}{9(l+1)(l+2)} + \frac{2(4+5l(3+l))S_{2l}}{9(l+1)(l+2)}-\frac{6-5l(1+l)(4l^2+6l-1)}{9(1+l)^2(2+l)(1+2l)}
+                \end{align}
+                Also at this order first order corrections to $\Delta_{\phi}$ along with $C_{\phi\phi\phi}^2$ is fixed: $\Delta_{\phi} = \frac{d-2}{2}-\frac{\epsilon}{18}+O(\epsilon^2)$ and $C_{\phi\phi\phi}^2 = -\frac{2}{3}\epsilon + O(\epsilon^2)$. Negative OPE coefficients for the scalar function implies that that theory in fixed point is not unitary.
+            \subsection{Second order calculations}  
+             At second order in epsilon calculation goes similar to the first order. 
+             \begin{itemize}
+                 \item order $u^1$ is matched by scalar part of the conformal block.
+                 \item at $u^2$, $log^2(u)$ and $log(u)$ terms gives the second order corrections to the anomalous dimension.
+                 \begin{equation}
+                     \gamma_l^{(2)} = \frac{2(86-l(-177+l(382+l(492+127l))))}{243(1+l)^3(2+l)^3} + \frac{20S_l}{27(1+l)(2+l)}
+                 \end{equation}
+                 \item at $u^2$ regular terms gives the second order corrections to OPE coefficients.
+                 \begin{multline}
+                    Q_2 = -\tfrac{26591}{1749600}, Q_4 = \tfrac{61563941}{267907500},Q_6 = \tfrac{2047344914778847}{4123293433459200},Q_8 = \tfrac{349552895612696393}{455981556990960000},\\Q_{10} = \tfrac{1368755978809447171291}{1327848692728141584000}
+                \end{multline}
+                \item finally, the  corrections to the scalar operator
+                \begin{equation}
+                    \Delta_{\phi} = \frac{d-2}{2}-\frac{\epsilon}{18}-\frac{43}{1458}\epsilon^2 + O(\epsilon^3);\hspace{10pt}C_{\phi\phi\phi}^2 = - \frac{2}{3}\epsilon-\frac{143}{243}\epsilon^2 + O(\epsilon^3)
+                \end{equation}
+             \end{itemize}
+        
+    % \end{document}

@@ -1,0 +1,419 @@
+\documentclass[pdf]{beamer}
+\mode<presentation>{}
+    \usepackage[utf8]{inputenc}
+    \usepackage{float}
+    \usepackage{subfig}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{graphicx}
+    \usepackage[export]{adjustbox}
+    \useinnertheme{rectangles}
+    \useoutertheme{infolines}
+    \usetheme{Madrid}
+    \usecolortheme{beaver}
+
+    \title{Understanding Octupole vibration in $Ca^{48}$ \\ and \\A Toy Model}
+    \author{Biplab Mahato}
+    \institute{Visiting student from IISc}
+    \date{25/07/2018}
+    \begin{document}
+        \frame{\titlepage}
+        \AtBeginSection[]{
+        \begin{frame}
+            \frametitle{Table of content}
+            \tableofcontents[currentsection]
+        \end{frame}}
+        \AtBeginSubsection[]{
+        \begin{frame}
+            \frametitle{Table of content}
+            \tableofcontents[currentsection,currentsubsection]
+        \end{frame}}
+        \section{Octupole vibration}
+        \subsection{TDHF}
+            \begin{frame}{TDHF}{Basics}
+                \begin{itemize}
+                    \item<2->Schrodinger equation is solved iteratively in a mean field
+                    \item<3->Time-dependent potential for vibration
+                    \item<4->Linear regime: only 1p1h states contribute
+                \end{itemize}
+            \end{frame}
+            % \
+            \begin{frame}{TDHF}{Calculations}
+                \begin{block}<1->{$Ca^{48}$ Octupole vibration}
+                    \begin{itemize}
+                      \item<2-3> Octupole moment
+                      \item<4-> Strength function      
+                    \end{itemize}
+                  \end{block}
+                  
+                  \begin{onlyenv}<3-5>
+                    \begin{center}
+                      \includegraphics<3>[width=0.8\textwidth,frame]{image/Ca48moment}
+                      \includegraphics<5>[width=0.7\textwidth,frame]{image/Ca48strength}
+                    \end{center}
+                  \end{onlyenv}
+                  
+                  \begin{onlyenv}<6->
+                    \begin{columns}
+                        \begin{column}[]{0.5\textwidth}
+                            Peaks : 6MeV and 10MeV
+                        \end{column}
+                        \begin{column}[]{0.5\textwidth}
+                            \includegraphics<6->[width=1\textwidth,frame]{image/Ca48strength}
+                        \end{column}
+                    \end{columns}
+                  \end{onlyenv}   
+            \end{frame}
+            \begin{frame}{Background}{Digging deeper}
+                \begin{onlyenv}<1->
+                \begin{columns}
+                    \begin{column}[]{0.5\textwidth}
+                        \centering
+                        \only<1>{Strength function for $Ca^{40}$}
+                        \only<2->{$Ca^{40}$}
+                        \includegraphics<1->[width=0.8\textwidth,frame]{image/Ca40strength}
+                        \only<2>{Strength function for $Ni^{56}$}
+                        \only<3->{ $Ni^{56}$:}
+                        \includegraphics<2->[width=0.8\textwidth,frame]{image/Ni56strength}
+                        %\footnote{All energies are in MeV}
+                    \end{column}
+                    \begin{column}[]{0.5\textwidth}
+                        \only<3->{Only $3^{-}$ states contribute}
+                        \centering
+                        \includegraphics<3->[width=0.6\textwidth,frame]{image/levelCaNi}
+                    \end{column}
+                \end{columns}
+                \footnote<1->{All energies are in MeV}
+                \end{onlyenv}
+            \end{frame}
+            \begin{frame}{Neutron and Proton transition densities for $Ca^{48}$}
+                \begin{onlyenv}<1-2>
+                    \begin{columns}
+                        \begin{column}[]{0.5\textwidth}
+                            \only<1->{Strength function for proton}
+                            \includegraphics<1->[width=1\textwidth,frame]{image/Ca48strengthp}
+                        \end{column}
+                        \begin{column}[]{0.5\textwidth}
+                            \only<2->{Strength function for neutron}
+                            \includegraphics<2->[width=1\textwidth,frame]{image/Ca48strengthn}
+                        \end{column}
+
+                    \end{columns}
+                \end{onlyenv}
+                \begin{onlyenv}<3->
+                    \begin{columns}
+                        \begin{column}[]{0.5\textwidth}
+                            \centering
+                            \only<3->{Proton}
+                            \includegraphics<3->[width=0.8\textwidth,frame]{image/Ca48strengthp}
+                            \only<3->{Neutron}
+                            \includegraphics<3->[width=0.8\textwidth,frame]{image/Ca48strengthn}
+                        \end{column}
+                        \begin{column}[]{0.5\textwidth}
+                            \centering
+                            
+                            \includegraphics<3->[width=0.6\textwidth,frame]{image/levelCaNi}
+                        \end{column}
+
+                    \end{columns}
+                \end{onlyenv}
+            \end{frame}
+        \subsection{RPA}
+            \begin{frame}{RPA}{}
+                \begin{columns}
+                    \begin{column}[]{0.7\textwidth}
+                        \begin{itemize}
+                            \item<1->Full hamiltonian with residual interaction is taken into account
+                            \item<2->Matrix representation of the full hamiltonian in 1p1h basis is diagonalised
+                            \item<3->Excited states are written as a linear combination of all 1p1h states.
+                            \item<4->particle-hole correlation
+                        \end{itemize}
+                    \end{column}
+                    \begin{column}[]{0.3\textwidth}
+                        \begin{onlyenv}<1>
+                            \begin{equation*}
+                                H = H_{MF} + V_{res}
+                            \end{equation*}
+                        \end{onlyenv}
+                        \begin{onlyenv}<3->
+                            \begin{equation*}
+                                |\nu\rangle = \sum_{1p1h}C_{1p1h}|1p1h\rangle
+                            \end{equation*}
+                        \end{onlyenv}
+                    \end{column}
+                \end{columns}
+            \end{frame}
+            \begin{frame}{RPA}{Calculations}
+                \begin{columns}
+                    \begin{column}[]{0.5\textwidth}
+                        \only<1>{strength function}
+                        \includegraphics<1->[width=1\textwidth,frame]{image/Ca48strengthrpa}
+                        %\includegraphics<4->[width=1\textwidth,frame]
+                    \end{column}
+                    \begin{column}[]{0.5\textwidth}
+                        \only<2>{Proton:}
+                        \includegraphics<2->[width=1\textwidth,frame]{image/Ca48strengthprpa}
+                        \only<3>{Neutron:}
+                        \includegraphics<3->[width=1\textwidth,frame]{image/Ca48strengthnrpa}
+                    \end{column}
+                    
+                \end{columns}
+            \end{frame}
+            \begin{frame}{TDHF vs RPA}{Comparison}
+                \begin{columns}
+                    \begin{column}[]{0.5\textwidth}
+                        \only<1->{Proton}
+                        \includegraphics<1->[width=1\textwidth,frame]{image/Ca48strengthprpa}
+                        \includegraphics<1->[width=1\textwidth,frame]{image/Ca48strengthp}
+                    \end{column}
+                    \begin{column}[]{0.5\textwidth}
+                        \only<2->{Neutron}
+                        \includegraphics<2->[width=1\textwidth,frame]{image/Ca48strengthnrpa}
+                        \includegraphics<2->[width=1\textwidth,frame]{image/Ca48strengthn}
+                    \end{column}
+                \end{columns}
+            \end{frame}
+            \begin{frame}{RPA}{1p1h contribution}
+                \begin{onlyenv}<1-3>
+                    \begin{columns}
+                        \begin{column}[]{0.5\textwidth}
+                            \begin{itemize}
+                                \item<2-3> Random Phase Approximation
+                                \item<3> Tamm-Dancoff Approximation
+                            \end{itemize}
+                        \end{column}
+                        \begin{column}[]{0.5\textwidth}
+                            \begin{onlyenv}<2>
+                                    $Q^{\dagger}_{\nu} =\sum_{m i} \left( X^{\nu}_{m i}\mathbf{a}^{\dagger}_{m}\mathbf{a}_i - Y^{\nu}_{m i}\mathbf{a}^{\dagger}_{i}\mathbf{a}_m \right)$
+                            \end{onlyenv}
+                            \begin{onlyenv}<3>
+                            \begin{equation*}
+                                Q^{\dagger}_{\nu} =\sum_{m i}  X^{\nu}_{m i}\mathbf{a}^{\dagger}_{m}\mathbf{a}_i 
+                            \end{equation*}
+                            \end{onlyenv}
+                        \end{column}
+                    \end{columns}
+                \end{onlyenv}
+                \begin{onlyenv}<4>
+                    Tamm-Dancoff Approximation:
+                    \includegraphics<4>[width=1\textwidth,frame]{image/Ca48contribution1p1h}
+                \end{onlyenv}
+                \begin{onlyenv}<5->
+                    \begin{columns}
+                        \begin{column}[]{.6\textwidth}
+                            Tamm-Dancoff Approximation
+                            \includegraphics<5->[width=1\textwidth,frame]{image/Ca48contribution1p1h}
+                            \begin{itemize}
+                                \item<6> $\pi(1f_{\frac{7}{2}})(1d_{\frac{3}{2}})^{-1}$ 5.12\%
+                                \item<6>  $\pi(1f_{\frac{7}{2}})(2s_{\frac{1}{2}})^{-1}$ 3.7\%
+                                \item<6>  $\nu(1g_{\frac{9}{2}})(1f_{\frac{7}{2}})^{-1}$ 3.75\%
+                                \item<6>  $\nu(1f_{\frac{5}{2}})(1d_{\frac{5}{2}})^{-1}$ 2.45\%
+                            \end{itemize}
+                        \end{column}
+                        \begin{column}[]{.4\textwidth}
+                            \centering
+                            \includegraphics<5->[width=0.6\textwidth,frame]{image/Ca48rpalevel}
+                        \end{column}
+                    \end{columns}
+                \end{onlyenv}
+            \end{frame}
+        \section{Toy Model}
+            \begin{frame}{The problem}
+                \begin{itemize}
+                    \item<1-> Two nucleus approaching each other
+                    \item<2-> An alpha particle exchange 
+                    \item<3-> Recurrance time
+                \end{itemize}
+            \end{frame}
+            \begin{frame}{Toy Model}
+                \begin{columns}
+                \begin{column}[]{0.5\textwidth}
+                \begin{itemize}
+                    \item<1-> Symmetric Potential Well
+                    \item<2-> Two eigenstate ($|+\rangle and |-\rangle$)
+                    \item<3-> Left and right state (45 degree rotation) $|L\rangle$ and $|R\rangle$.
+                    \item<4-> Two internal states $|0\rangle$ and $|1\rangle$.
+                    \item<5-> Coupling V
+                \end{itemize}
+                \end{column}
+                \begin{column}[]{0.5\textwidth}
+                    \includegraphics<1>[width=1\textwidth,frame]{image/doublewell}
+                    \begin{onlyenv}<2>
+                        \centering
+                        Hamiltonian
+                    \begin{equation*}
+                    \begin{pmatrix}
+                        0&0\\
+                        0&\epsilon\\
+                    \end{pmatrix}
+                    \end{equation*}
+                    \end{onlyenv}
+                    \begin{onlyenv}<3>
+                        \centering
+                        Hamiltonian
+                        \begin{equation*}
+                        \begin{pmatrix}
+                            \epsilon/2&-\epsilon/2\\
+                            -\epsilon/2&\epsilon/2\\
+                        \end{pmatrix}
+                        \end{equation*}
+                    \end{onlyenv}
+                    \begin{onlyenv}<4>
+                        \centering
+                        Hamiltonian
+                        \begin{equation*}
+                        \begin{pmatrix}
+                            \frac{\epsilon}{2}&0&-\frac{\epsilon}{2}&0\\
+                            0&\frac{\epsilon}{2}+\delta&0&-\frac{\epsilon}{2}+\delta\\
+                            -\frac{\epsilon}{2}&0&\frac{\epsilon}{2}&0\\
+                            0&-\frac{\epsilon}{2}+\delta&0&\frac{\epsilon}{2}+\delta\\
+                        \end{pmatrix}
+                        \end{equation*}
+                    \end{onlyenv}
+                    \begin{onlyenv}<5>
+                        \centering
+                        Hamiltonian
+                        \begin{equation*}
+                        \begin{pmatrix}
+                            \frac{\epsilon}{2}&0&-\frac{\epsilon}{2}&0\\
+                            0&\frac{\epsilon}{2}+\delta&0&-\frac{\epsilon}{2}+\delta\\
+                            -\frac{\epsilon}{2}&0&\frac{\epsilon}{2}&V\\
+                            0&-\frac{\epsilon}{2}+\delta&V&\frac{\epsilon}{2}+\delta\\
+                        \end{pmatrix}
+                        \end{equation*}
+                    \end{onlyenv}
+                \end{column}
+                \end{columns}
+            \end{frame}
+            \begin{frame}{Evolution}
+                \begin{onlyenv}<1-4>
+                    \begin{itemize}
+                        \item<1-> Initial state $|\Psi(t=0)\rangle = |L0\rangle$
+                        \item<2-> Schrodinger Equation: $i\frac{d |\Psi\rangle}{d t}  = \hat{H}|\Psi\rangle$
+                        \item<3-> $|\Psi(t)\rangle = e^{-i\hat{H}t}|\Psi(0)\rangle$
+                        \item<4-> Projection: $|\langle\Psi(0)|\Psi(t)\rangle|^2$
+                    \end{itemize}
+                \end{onlyenv}
+                \begin{block}<5->{Projection: $|\langle\Psi(0)|\Psi(t)\rangle|^2$}
+                        \only<5>{$\delta=V=0$}
+                        \only<6>{$\delta=0$ small V}
+                        \only<7>{$\delta=0$, large V}
+                        \only<8->{Everything non-zero}
+                \end{block}
+                \begin{onlyenv}<5->
+                    \begin{columns}
+                    \begin{column}[]{0.8\textwidth}
+                    \centering
+K
+                    \includegraphics<5>[width=1\textwidth,frame]{image/twowell_epsilon1del0V0}
+                    \includegraphics<6>[width=1\textwidth,frame]{image/twowell_epsilon1del0V}
+                    \includegraphics<7>[width=1\textwidth,frame]{image/twowell_epsilondel0V1}
+                    \includegraphics<8>[width=1\textwidth,frame]{image/twowell_epsilondelV}
+                    \includegraphics<9>[width=1\textwidth,frame]{image/twowell_epsilondelVr}
+                    \end{column}
+                    \begin{column}[]{0.2\textwidth}
+                    \only<5>{$T\propto\frac{1}{\epsilon}$}
+                    \only<6>{An envelop due to introduction of coupling}
+                    \end{column}
+                    \end{columns}
+                \end{onlyenv}
+            \end{frame}
+            \begin{frame}{LCM Energy}{Alternative way to obtain Recurrance time}
+                \begin{onlyenv}<1->
+                \begin{columns}
+                    \begin{column}[]{0.5\textwidth}
+                        \begin{itemize}
+                            \item<1-> Diagonalise the Hamiltonian
+                            \item<2-> Any state can be written as a linear combination of eigenstate.
+                            \item<3-> Time evolution of the state
+                            \item<4->Note: Each of the time dependent term repeats when $E_i t =2\pi n_i,n\in\mathbb{Z}$. \\
+                            \item<5->So recurrance time is LCM($\dfrac{2\pi}{E_i}$).
+                        \end{itemize}
+                        
+                    \end{column}
+                    \begin{column}[]{0.5\textwidth}
+                        \begin{onlyenv}<1>
+                            \begin{itemize}
+                                \item<1> Eigenvalues: $E_i$
+                                \item<1> Eigenvectors: $v_i$
+                            \end{itemize}
+                        \end{onlyenv}
+                        \begin{onlyenv}<2>
+                            \begin{equation*}
+                                |\Psi\rangle = \sum_{i=1}^{4} c_i |v_i\rangle
+                            \end{equation*}
+                        \end{onlyenv}
+                        \begin{onlyenv}<3->
+                            \begin{equation*}
+                                |\Psi(t)\rangle = \sum_{i=1}^{4} c_i e^{-iE_i t} |v_i\rangle
+                            \end{equation*}
+                        \end{onlyenv}
+                    \end{column}
+                \end{columns}
+                \end{onlyenv}
+            \end{frame}
+            \begin{frame}{Future Directions}{Unfinished Business}
+                \begin{columns}
+                    \begin{column}[]{0.5\textwidth}
+                        \begin{itemize}
+                            \item<1->Change-epsilon(time-dependent)
+                            \begin{itemize}
+                                \item<2->Step
+                                \item<3->Linear
+                            \end{itemize}
+                            \item<4->Introduce more internal states
+                            \begin{itemize}
+                                \item<5->Coupling with only ground state
+                                \item<6->Coupling between excited states
+                            \end{itemize}
+                        \end{itemize}
+                    \end{column}
+                    \begin{column}[]{.5\textwidth}
+                        \includegraphics<2>[width=1\textwidth]{image/changeepsilonstep10v1d1}
+                        \includegraphics<3>[width=1\textwidth]{image/changeepsilonlin2v1d1}
+                        \begin{onlyenv}<4>
+                            \begin{equation*}
+                            \begin{pmatrix}
+                                \frac{\epsilon}{2}&0&0&-\frac{\epsilon}{2}&0&0\\
+                                0&\frac{\epsilon}{2}&0&0&-\frac{\epsilon}{2}&0\\
+                                0&0&\frac{\epsilon}{2}+\delta&0&0&\delta-\frac{\epsilon}{2}\\
+                                -\frac{\epsilon}{2}&0&0&\frac{\epsilon}{2}&0&0\\
+                                0&-\frac{\epsilon}{2}&0&0&\frac{\epsilon}{2}&0\\
+                                0&0&\delta-\frac{\epsilon}{2}&0&0&\frac{\epsilon}{2}+\delta\\
+                            \end{pmatrix}
+                            \end{equation*}
+                        \end{onlyenv}
+                        \begin{onlyenv}<5>
+                            \begin{equation*}
+                            \begin{pmatrix}
+                                \frac{\epsilon}{2}&0&0&-\frac{\epsilon}{2}&0&0\\
+                                0&\frac{\epsilon}{2}&0&0&-\frac{\epsilon}{2}&0\\
+                                0&0&\frac{\epsilon}{2}+\delta&0&0&\delta-\frac{\epsilon}{2}\\
+                                -\frac{\epsilon}{2}&0&0&\frac{\epsilon}{2}&V&V\\
+                                0&-\frac{\epsilon}{2}&0&V&\frac{\epsilon}{2}&0\\
+                                0&0&\delta-\frac{\epsilon}{2}&V&0&\frac{\epsilon}{2}+\delta\\
+                            \end{pmatrix}
+                            \end{equation*}
+                            \\
+                            \begin{center}
+                            $V' = \sqrt{2}V$\end{center} 
+                        \end{onlyenv}
+                        \begin{onlyenv}<6>
+                            \begin{equation*}
+                            \begin{pmatrix}
+                                \frac{\epsilon}{2}&0&0&-\frac{\epsilon}{2}&0&0\\
+                                0&\frac{\epsilon}{2}&0&0&-\frac{\epsilon}{2}&0\\
+                                0&0&\frac{\epsilon}{2}+\delta&0&0&\delta-\frac{\epsilon}{2}\\
+                                -\frac{\epsilon}{2}&0&0&\frac{\epsilon}{2}&V_1&V_2\\
+                                0&-\frac{\epsilon}{2}&0&V_1&\frac{\epsilon}{2}&V_3\\
+                                0&0&\delta-\frac{\epsilon}{2}&V_2&V_3&\frac{\epsilon}{2}+\delta\\
+                            \end{pmatrix}
+                            \end{equation*}
+                        \end{onlyenv}
+                    \end{column}
+                \end{columns}
+            \end{frame}
+            \begin{frame}
+                Thank you!!
+            \end{frame}
+    \end{document}

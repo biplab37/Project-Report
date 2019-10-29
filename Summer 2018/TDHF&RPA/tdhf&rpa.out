@@ -1,0 +1,17 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{The Nuclear Many-body Problem}{}% 2
+\BOOKMARK [1][-]{section.3}{Hartree Fock Method}{}% 3
+\BOOKMARK [1][-]{section.4}{Skyrme-Hartree-Fock}{}% 4
+\BOOKMARK [1][-]{section.5}{Time dependent Hartree-Fock Theory}{}% 5
+\BOOKMARK [1][-]{section.6}{Linear Response Theory}{}% 6
+\BOOKMARK [1][-]{section.7}{Random Phase Approximation}{}% 7
+\BOOKMARK [2][-]{subsection.7.1}{Language of Second Quantisation}{section.7}% 8
+\BOOKMARK [2][-]{subsection.7.2}{Tamm-Dancoff Approximation}{section.7}% 9
+\BOOKMARK [2][-]{subsection.7.3}{Random Phase Approximation}{section.7}% 10
+\BOOKMARK [1][-]{section.8}{Results and Discussion}{}% 11
+\BOOKMARK [2][-]{subsection.8.1}{Results from TDHF}{section.8}% 12
+\BOOKMARK [3][-]{subsubsection.8.1.1}{Ground state properties}{subsection.8.1}% 13
+\BOOKMARK [3][-]{subsubsection.8.1.2}{Octupole vibration}{subsection.8.1}% 14
+\BOOKMARK [2][-]{subsection.8.2}{Results from RPA}{section.8}% 15
+\BOOKMARK [1][-]{Appendix.1.A}{code TDHF}{}% 16
+\BOOKMARK [1][-]{Appendix.1.B}{code RPA}{}% 17

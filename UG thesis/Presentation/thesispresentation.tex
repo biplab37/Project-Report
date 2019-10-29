@@ -1,0 +1,469 @@
+\documentclass[pdf]{beamer}
+\mode<presentation>{}
+    \usepackage[utf8]{inputenc}
+    \usepackage{float}
+    \usepackage{subfig}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{graphicx}
+    \usepackage[export]{adjustbox}
+    \useinnertheme{rectangles}
+    \useoutertheme{infolines}
+    \usetheme{Madrid}
+    \usecolortheme{beaver}
+    \usepackage{tikz}
+    \title{Skeleton Expansion In Conformal Field Theory}
+    \author{Biplab Mahato}
+    \institute{IISc}
+    
+    
+    \begin{document}
+        \frame{\titlepage}
+
+        % \AtBeginSection[]{
+        %     \begin{frame}
+        %         \frametitle{Table of content}
+        %         \tableofcontents[currentsection]
+        %     \end{frame}}
+
+        % \AtBeginSubsection[]{
+        %     \begin{frame}
+        %         \frametitle{Table of content}
+        %         \tableofcontents[currentsection,currentsubsection]
+        %     \end{frame}}
+        \begin{frame}
+            \frametitle{Table of content}
+            \tableofcontents
+        \end{frame}
+
+        \section{Introduction}
+
+            \begin{frame}[t]{Introduction}{Critical Phenomena}
+                \onslide<2->
+                Critical phenomena are ubiquitous in nature.
+                \begin{columns}
+                    \begin{column}[]{0.5\textwidth}
+                        \begin{itemize}
+                            \item<3-> water-vapor coexistance
+                            \item <4-> Phase transition of Ferromagnets at Curie temperature.
+                        \end{itemize}
+                    \end{column}
+
+                    \begin{column}[]{0.5\textwidth}
+                        \includegraphics<3->[width=0.8\textwidth]{800px-Phase-diag2.png}
+                    \end{column}
+                \end{columns}
+                \vspace{5pt}
+                \onslide<4->
+                \begin{columns}
+                    \begin{column}{0.7\textwidth}
+                        \onslide<5->
+                        Phase transitions are characterised by  \emph{critical exponents}.
+                    \end{column}
+                    \begin{column}{0.3\textwidth}
+                        \begin{equation*}
+                        \chi \approx \frac{1}{(T-T_C)^{\gamma}}
+                        \end{equation*}
+                    \end{column}
+                \end{columns}
+                \footnotetext{From wikipedia entry on Phase Diagram }
+            \end{frame}
+
+            \begin{frame}[t]{Introduction}{RG technique}
+                \begin{itemize}
+                    \item <2-> A large number of technique is developed to calculate critical exponents and their origin.
+                    \item <3-> Renormalisation Group technique is among the most powerful ones.
+                    \item <4-> Traditionally the method requires
+                    \begin{itemize}
+                        \item <5-> Evaluation of Feynman Diagrams
+                        \item <6-> Renormalisation of wave function, couplings
+                        \item <7-> Calculation of $\beta$ function.
+                    \end{itemize}
+                \end{itemize}
+                \onslide<8->
+                Here we use an improved method which bypasses the last two steps and reduce the number of diagrams, to calculate CFT data (which encodes the critical exponents) of $\phi^3$ theory in $6-\epsilon$ dimension.\footnotemark
+                \footnotetext{Vasco Goncalves, \emph{Skeleton expansion and large spin bootstrap for $\phi^3$ theory}  arXiv:1809.09572 }\par
+                We have rederived the result using Inversion Integral.
+            \end{frame}
+        \section{Skeleton Expansion}
+
+            \subsection{Conformal Symmetry}
+
+                \begin{frame}[t]{Conformal Symmetry}{Conformal Group}
+                    \begin{onlyenv}<1->
+                        Conformal Field Theory satisfies Conformal Symmetry.
+                        \\[20pt]
+                        \onslide<2->
+                            \textbf{Conformal Symmetry}                       
+                        \begin{itemize}
+                            \item<3->Translation: $x'^{\mu}  = x^{\mu}+ a^{\mu} $
+                            \item<4->Rotation: $x'^{\mu} = M_{\nu}^{\mu} x^{\nu}$
+                            \item<5->Dilatation: $x'^{\mu} = \alpha x^{\mu}$ where $\alpha>0$
+                            \item<6-> Special Conformal Transformation: $x'^{\mu} = \frac{x^{\mu}-(x\cdot x)b^{\mu}}{1-2(b\cdot x)+(b\cdot b)(x\cdot x)}$
+                        \end{itemize}
+                        \vspace{10pt}
+                        \onslide<7->
+                            These transformations form a group (\emph{Conformal Group}).
+                    \end{onlyenv}
+                \end{frame}
+
+                \begin{frame}[t]{Conformal Symmetry}{Correlation Functions}
+                    \onslide<+->
+                        Conformal Invariance fixes the form of two and three point functions
+                    \vspace{10pt}
+
+                    \begin{columns}<+->
+
+                        \begin{column}[]{0.3\textwidth}
+                            \centering
+                            \textbf{Two-point function}
+                            \small
+                            \begin{equation*}
+                                \langle\phi_i(x_1)\phi_j(x_2)\rangle = \frac{\delta_{ij}}{(x_{12}^2)^{\Delta_{\phi}}}
+                            \end{equation*}
+                        \end{column}
+
+                        \vline
+                        
+                        \begin{column}{0.7\textwidth}
+                            \centering
+                            \textbf{Three-point function}
+                            \small
+                            \begin{equation*}
+                                \langle\phi_i(x_1)\phi_j(x_2)\phi_k(x_3)\rangle = \frac{C_{ijk}}{(x_{12}^2)^{\frac{\Delta_{12,3}}{2}}(x_{23}^2)^{\frac{\Delta_{23,1}}{2}}(x_{13}^2)^{\frac{\Delta_{13,2}}{2}}}
+                            \end{equation*}
+                        \end{column}
+
+                    \end{columns}
+
+                    \onslide<+->
+                    \vspace{5pt}
+                        Conformal Symmetry does not completely fix four-point function.
+
+                    \begin{equation*}
+                        \langle\phi(x_1)\phi(x_2)\phi(x_3)\phi(x_4)\rangle = \frac{\mathcal{A}(u,v)}{(x_{12}^2x_{34}^2)^{\Delta_{\phi}}}
+                    \end{equation*}
+
+                    \onslide<+-> 
+                        where $\mathcal{A}(u,v)$ is an arbitrary function of the conformally invariant cross ratios 
+                    \small
+                    \begin{equation*}
+                        u =z\bar{z} =  \frac{x_{12}^2x_{34}^2}{x_{13}^2x_{24}^2}\hspace{10pt} v = (1-z)(1-\bar{z}) = \frac{x_{14}^2x_{23}^2}{x_{13}^2x_{24}^2}
+                    \end{equation*}
+
+                    \footnotetext{$x_{ij} = |x_i-x_j|$ and $\Delta_{ij,k} = \Delta_i+\Delta_j-\Delta_k$}
+                \end{frame}
+
+            \subsection{Skeleton Diagram}
+
+                \begin{frame}[t]{Skeleton Diagram}{Main Idea}
+
+                    \onslide<1-> 
+                        Skeleton expansion systematically allow us to calculate n-point function.
+
+                    \begin{itemize}
+                        \item<2-> Sum all 1PI diagrams with two external lines to get the exact propagator.
+                        \item <3-> Sum all 1PI diagrams with three external lines to obtain vertex of the theory.
+                        \item <4-> For four point function, only those 1PI diagrams are drawn where propagator and vertex correction is absent.
+                    \end{itemize}
+
+                \end{frame}
+
+                \begin{frame}[t]{Skeleton Diagram}{Adding Conformal Symmetry}
+
+                    Conformal invariance trivialises the work in the first two steps.\\
+                    \pause
+                    Exact propagator should have the form $\frac{1}{x_{12}^{2\Delta_{\phi}}}$\\
+                    \pause
+                    \begin{center}
+                    \includegraphics<3->[width=0.8\textwidth]{imageskeleton.pdf}
+                    \end{center}
+                    
+                    \pause 
+                    For the Vertex:
+                    \vspace{10pt}
+
+                    \begin{columns}
+
+                        \begin{column}{0.7\textwidth}
+                            \centering
+                            \begin{onlyenv}<4->
+                                $\langle \phi_1(x_1)\phi_2(x_2)\phi_3(x_3) \rangle $
+                            \end{onlyenv}
+                            
+                            \begin{onlyenv}<5->
+                                $=$
+                            \end{onlyenv}
+
+                            \begin{onlyenv}<5->
+                                $\int \left(\prod_{i=1}^{3}dy_i\langle\phi_i(x_i)\phi_i(y_i)\rangle \right)V(y_1,y_2,y_3)$
+                            \end{onlyenv}
+                        \end{column}
+
+                        \vline
+
+                        \begin{column}{0.3\textwidth}
+                            \centering
+                            \includegraphics<4->[width=0.5\textwidth]{vertexcorr.pdf}
+                        \end{column}
+
+                    \end{columns}
+
+                    \vspace{10pt}
+                    \onslide<6->
+                    \centering
+
+                    \begin{onlyenv}
+                        $V(y_1,y_2,y_3) = \frac{g_{123}}{(y_{12}^2)^{\frac{d-\Delta_{12,3}}{2}}(y_{13}^2)^{\frac{d-\Delta_{13,2}}{2}}(y_{23}^2)^{\frac{d-\Delta_{23,1}}{2}}}\footnote[frame]{where $d = \sum_{i=1}^3 \Delta_i$ and $\Delta_{12,3} = \Delta_1 + \Delta_2 -\Delta_3$} $
+                    \end{onlyenv}
+
+                \end{frame}
+
+            \subsection{Calculations}
+                
+                \begin{frame}[t]{Calculations}{$O(g^0)$}
+                    \onslide<2-> No vertex. \par
+                    \onslide<3-> Points are connected  in pairs through exact propagator.
+                    \vspace{15pt}
+                    
+                    \begin{columns}
+                        \begin{column}{0.7\textwidth}
+                            \centering
+                            \onslide<4->
+                            \begin{align*}
+                                \frac{1}{(x_{12}^2x_{34}^2)^{\Delta_{\phi}}} + \frac{1}{(x_{14}^2x_{23}^2)^{\Delta_{\phi}}} + \frac{1}{(x_{13}^2x_{24}^2)^{\Delta_{\phi}}}\\
+                                =
+                                \frac{1}{(x_{12}^2x_{34}^2)^{\Delta_{\phi}}}\left(1+u^{\Delta_{\phi}}+(\frac{u}{v})^{\Delta_{\phi}}\right)
+                            \end{align*}
+                        \end{column}
+                        \vspace{10pt}
+                        \begin{column}{0.3\textwidth}
+                            \centering
+                            \includegraphics<4->[width=0.4\textwidth]{og0cal.pdf}
+                        \end{column}
+                    \end{columns}
+
+                    \vspace{15pt}
+                    \onslide<5->
+                    \begin{equation*}
+                        \mathcal{A}(u,v) = 1 + u^{\Delta_{\phi}} + \left(\frac{u}{v} \right)^{\Delta_{\phi}}
+                    \end{equation*}
+
+                \end{frame}
+
+                \begin{frame}[t]{Calculations}{$O(g^2)$}
+                    \begin{columns}
+                        \begin{column}{0.7\textwidth}
+                            \onslide<2->
+                            \begin{equation*}
+                                g^{2}_{\phi\phi\phi}\int\frac{d^{d}x_{5}... d^{d}x_{10}}{\underbrace{(x^{2}_{15}x^{2}_{27}x^{2}_{36}x^{2}_{49})^{\Delta}(x^{2}_{810}}_{propagator})^{\Delta}(\underbrace{x^{2}_{57}x^{2}_{58}x^{2}_{78}}_{vertex 1}\underbrace{x^{2}_{69}x^{2}_{610}x^{2}_{910}}_{vertex 2})^{\frac{d-\Delta}{2}}}
+                            \end{equation*}
+                        \end{column}
+
+                        \begin{column}{0.3\textwidth}
+                            \centering
+                            \includegraphics<2->[width=0.4\textwidth]{og2cal.pdf}
+                        \end{column}
+                    \end{columns}
+                    \vspace{10pt}
+                     \begin{itemize}
+                         \item<3-> All integrals except one can be done using Symanzik star-triangle formula.
+                         \item <4-> Remaining integral can be identified with the $\bar{D}$ function
+                         \begin{equation*}
+                            \frac{C_{\phi\phi\phi}^{2}\Gamma(\Delta)}{\Gamma^{4}(\frac{\Delta}{2})\Gamma(\frac{d-2\Delta}{2})}u^{\frac{d-\Delta}{2}}\bar{D}_{\frac{d-\Delta}{2}\frac{d-\Delta}{2},\frac{\Delta}{2}\frac{\Delta}{2}}(u,v)
+                         \end{equation*}
+                         \item <5-> Simillarly other permutations.
+                     \end{itemize}
+
+                     \footnotetext[0]{Note that there is no divergence}
+                \end{frame}
+
+                \begin{frame}[t]{Calculations}{$O(g^4)$}
+                    \begin{columns}
+                        \begin{column}{0.7\textwidth}
+                            \begin{itemize}
+                                \item<2-> Similar calculation.
+                                \item<3-> Out of 12 integration 8 can be done using star-triangle formula.
+                                \item<4-> Rest of the integrations can be done either using Parametric Integration or by obtaing a differential equation that the resultant function has to satisfy and solving it.
+                            \end{itemize}
+                        \end{column}
+
+                        \begin{column}{0.3\textwidth}
+                            \centering
+                            \includegraphics<2->[width=0.5\textwidth]{og4cal.pdf}
+                        \end{column}
+                    \end{columns}
+                \end{frame}
+
+        \section{Conformal Block Decomposition}
+
+                \begin{frame}[t]{Operator Product Expansion}
+                    
+                        \onslide<2-> Operator action on a state 
+                        \small
+                        \begin{equation*}
+                            \phi_1(x)\phi_2(0)|0\rangle = \frac{1}{(x^2)^{\Delta_{\phi}}}\sum_{\mathcal{O} primaries} \lambda_{12\mathcal{O}}C_{\mathcal{O}}(x,\partial_y)\mathcal{O}(y)|_{y=0}|0\rangle
+                        \end{equation*}
+                        \onslide<3->
+                        \normalsize
+                            Four-point function then can be written as,
+                        \scriptsize
+                        \begin{equation*}
+                            \langle\phi(x_1)\phi(x_2)\phi(x_3)\phi(x_4)\rangle = \frac{1}{(x_{12}^{2}x_{34}^{2})^{\Delta_{\phi}}}\sum_{\mathcal{O}}\underbrace{\lambda_{12\mathcal{O}}\lambda_{34\mathcal{O}}}_{\text{OPE coefficient}}\underbrace{\left(\mathcal{C}_{\mathcal{O}}(x_{12},\partial_y)\mathcal{C}_{\mathcal{O}}(x_{34},\partial_z)\langle\mathcal{O}(y)\mathcal{O}(z) \rangle \right)}_{\text{Conformal Block}}
+                        \end{equation*} 
+                        \normalsize
+                        \onslide<4-> These conformal blocks or conformal partial waves are fixed by conformal symmetry. \\
+                        \onslide<5-> We only need to determine the OPE coefficients.
+                \end{frame}
+
+                \begin{frame}[t]{Conformal Blocks}
+                    \begin{itemize}
+                        \item <2->A primary operator is characterised by its scaling dimension and its spin.
+                        \small
+                        \item<3-> 
+                        \begin{equation*}
+                            \mathcal{A}(u,v) = 1 + \sum_{\Delta,\ell}a_{\Delta,\ell}G_{\Delta,\ell}(u,v)
+                        \end{equation*}
+                        
+                        \item<4-> \small
+                        $G_{\Delta,\ell}(u,v) = \sum_{m=0}^{\infty} u^{\frac{\Delta-\ell}{2}+m} g_{m,\ell}(v) $
+                        \onslide<5->
+                        \scriptsize
+                        \vspace{5pt}
+                        \begin{align*}
+                            g_{0,\ell}(u,v) &= \left(\frac{v-1}{2}\right)^{\ell} {}_2F_1\left(\frac{\Delta+\ell}{2},\frac{\Delta+\ell}{2};\Delta+\ell;1-v\right)\\
+                            g_{1,\ell}(u,v) &= \frac{\Delta(\ell+\Delta)^2(\Delta-1)}{(\Delta+\ell-1)(\Delta+\ell+1)(\Delta+1-\frac{d}{2})} {}_2F_1\left(\frac{\Delta+2}{2},\frac{\Delta+2}{2};\Delta+2;1-v\right)
+                        \end{align*}
+                    \end{itemize}
+
+                    \onslide<6->
+                        Expand  $\mathcal{A}(u,v)$ in the limit $u\to0,v\to1$.\par
+                    \onslide<7-> 
+                        Match coefficients on both side to obtain CFT data.
+                    
+                \end{frame}
+
+                \begin{frame}[t]{Results}
+                    \begin{itemize}
+                        \item<2->$\Delta_{\phi} = \frac{d-2}{2} - \frac{\epsilon}{18} - \frac{43}{1458}\epsilon^2 + O(\epsilon^3)$
+                        \item<3->$C_{\phi\phi\phi}^2 = -\frac{2}{3}\epsilon - \frac{143}{243}\epsilon^2 + O(\epsilon^3)$\hspace{20pt} Non-Unitary!
+                        \item<4->$\Delta_{\ell} = 2\Delta_{\phi} + \ell + \gamma_{\ell}^{(1)}\epsilon + \gamma_{\ell}^{(2)}\epsilon^2 + O(\epsilon^3)$
+                        \onslide<5->
+                        \begin{align*}
+                            \gamma_{\ell}^{(1)} &= \frac{4}{3(\ell+1)(\ell+2)}\\
+                            \gamma_{\ell}^{(2)} &= \frac{2(86-\ell(-177+\ell(382+\ell(492+127\ell))))}{243(1+\ell)^3(2+\ell)^3}+ \frac{20S_\ell}{27(1+\ell)(2+\ell)}
+                        \end{align*}
+                    
+                    
+                        \item<6->$p_{0,\ell} = \frac{2^{\ell} (\ell+2)!(\ell+1)! }{(2\ell+1)!}(1+\epsilon\mathcal{P}_{\ell}) + O(\epsilon^2)$\\
+                        \onslide<7->
+                        \vspace{10pt}
+                        \text{where } $\mathcal{P}_{\ell} = -\frac{4(7+5\ell(3+\ell))S_{\ell}}{9(\ell+1)(\ell+2)} + \frac{2(4+5\ell(3+\ell))S_{2\ell}}{9(\ell+1)(\ell+2)}-\frac{6-5\ell(1+\ell)(4\ell^2+6\ell-1)}{9(1+\ell)^2(2+\ell)(1+2\ell)}$
+                        
+                    \end{itemize}
+                \end{frame}
+
+        \section{Inversion Formula}
+                
+                \begin{frame}[t]{Inversion Formula}
+                    \begin{itemize}
+                        \item <2-> Singularities in the correlator carries the information about the CFT data.
+                        \item <3-> One can Invert the following relation 
+                        \begin{equation*}
+                            \sum_{\Delta,\ell}a_{\Delta,\ell}G_{\Delta,\ell}(z,\bar{z}) = \mathcal{A}(z,\bar{z})
+                        \end{equation*}
+                        \onslide<4->To get the integral equation\footnotemark
+                        \begin{equation*}
+                            \hat{a}(\bar{h}) = \frac{2\bar{h}-1}{\pi^2}\int_0^1dtd\bar{z}\frac{\bar{z}^{\bar{h}-2}(t(1-t))^{\bar{h}-1}}{(1-t\bar{z})^{\bar{h}}}\text{dDisc}[\mathcal{A}(\bar{z})]
+                        \end{equation*}
+                        \onslide<5-> where $\text{dDisc}[\mathcal{A}(\bar{z})] = \mathcal{A}(\bar{z}) - \frac{1}{2}\left(\mathcal{A}^{\circlearrowleft}(\bar{z}) + \mathcal{A}^{\circlearrowright}(\bar{z}) \right)$ and $\bar{h} = l+\Delta$
+                    \end{itemize}
+                    \begin{itemize}
+                        \item<6-> We were interested in the limit $z\to0,\bar{z}\to1$.
+                        % \\
+                        % \item<7-> Two kind of divergent terms $\frac{1}{(1-\bar{z})^p}$ ($p>0$) and log$^2(1-\bar{z})$
+                    \end{itemize}
+                    \footnotetext{arXiv:1711.02031}
+                \end{frame}
+
+                \begin{frame}[t]{Inversion Integral}{Expanding $\bar{D}$ function}
+                    \onslide<2->
+                    We want $\bar{D}$ function in the limit $u\to0$, $v\to0$ limit\footnotemark[1].\par
+                    \onslide<3->\footnotesize
+                    \begin{align*}
+                        \bar{D}_{\Delta_1,\Delta_2,\Delta_3,\Delta_4}(u,v) &= \frac{1}{2\pi i}\frac{1}{2\pi i}\int_{-i\infty}^{i\infty} \frac{ds}{2}\frac{dt}{2}u^{\tfrac{s}{2}}v^{\tfrac{t}{2}}\Gamma(-\tfrac{s}{2})\Gamma(-\tfrac{s}{2}+\tfrac{\Delta_3+\Delta_4-\Delta_1-\Delta_2}{2})\\ & \times \Gamma(-\tfrac{t}{2})\Gamma(-\tfrac{t}{2}+\tfrac{\Delta_1+\Delta_4-\Delta_2-\Delta_3}{2})\Gamma(\Delta_2+\tfrac{s+t}{2})\Gamma(\tfrac{s+t}{2}+\tfrac{\Delta_1+\Delta_2+\Delta_3-\Delta_4}{2})
+                    \end{align*}
+                    \par
+                    \normalsize
+                    \begin{itemize}
+                        \item<4-> We are only interested in the poles $s=-2,0$ and $t=-2,0$.\par
+                        \item<5-> Evaluating residues at those poles gives the desired expansion of $\bar{D}$ function.\par
+                        \item<6-> This produces singularities of two types $\frac{1}{v}$ and $log^2(v)$.\par
+                        \item<7-> Inversion Integral for both types are known\footnotemark[2].
+                    \end{itemize}
+                    \footnotetext[1]{arXiv:1712.02788}
+                    \footnotetext[2]{arXiv:1712.02314}
+                \end{frame}
+
+                \begin{frame}[t]{Inversion Integral}{CFT data recovery}
+                    \onslide<2->
+                    CFT data can be recovered from $\hat{a}(\bar{h})$
+                    \begin{itemize}
+                        \item <3-> Find $U_{\bar{h}}^{(k)}$ such that
+                        \begin{equation*}
+                            \hat{a}(\bar{h}) = U_{\bar{h}}^{(0)} + \frac{1}{2}log(z)U_{\bar{h}}^{(1)}+ \frac{1}{8}log^2(z)U_{\bar{h}}^{(2)} + \cdots
+                        \end{equation*} 
+                        \item <4-> Anomalous dimensions and OPE coefficients can be obtained from
+                        \begin{equation*}
+                            \bar{a}_{\ell}(\gamma_{\ell})^k = U_{\bar{h}}^{(k)} + \frac{1}{2}\partial_{\bar{h}}U_{\bar{h}}^{(k+1)}+\cdots
+                        \end{equation*}
+                        \item <5-> OPE co-efficients are given by $a_{\Delta,\ell} = \frac{2^{\ell}\Gamma(\frac{\Delta+\ell}{2})^2}{\Gamma(\Delta+\ell)}\bar{a}_{\ell}$
+                    \end{itemize}
+                    \vspace{10pt}
+                    \onslide<6->
+                    \centering
+                    \Large
+                    The result matched with the previous calculations!
+                \end{frame}
+        \section{Future Directions}
+
+                 \begin{frame}{Future Directions}
+                    Skeleton Expansion certainly have an advantage over traditional methods.
+                    \onslide<2-> In future we would like to
+                    \begin{columns}
+                        \begin{column}{0.6\textwidth}
+                            \begin{itemize}
+                                \item <3-> Use this method for other systems.
+                                \item <4-> Calculate higher orders in $\epsilon$.
+                                \item <5-> Use Conformal Bootstrap methods.
+                                \item <6-> Comparing higher powers of u.
+                            \end{itemize}
+                        \end{column}
+                        \vline
+                        \begin{column}{0.4\textwidth}
+                            \centering
+                            \begin{onlyenv}<3>
+                                O(N) model
+                            \end{onlyenv}
+                            \begin{onlyenv}<4>
+                                Parametric Integration
+                            \end{onlyenv}
+                            \begin{onlyenv}<5>
+                                First order calculations are done.
+                            \end{onlyenv}
+                            \begin{onlyenv}<6>
+                                Operators other than twist four comes into picture
+                            \end{onlyenv}
+                        \end{column}
+                    \end{columns}
+                 \end{frame}
+        %%%%%%% THANK YOU SLIDE %%%%%%%
+                \begin{frame}
+                    \begin{center}
+                        \huge
+                            Thank You!!
+                    \end{center}
+                \end{frame}
+
+
+    \end{document}
